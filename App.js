@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  Text,
+  View,
+  ScrollView,
+  ActivityIndicator,
+  Switch,
+} from "react-native";
+import styles from "./styles.js";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ScrollView style={styles.scroll}>
+        {new Array(20).fill(null).map((v, i) => (
+          <View key={i}>
+            <Text style={[styles.scrollItem, styles.text]}> Some Text</Text>
+            <ActivityIndicator
+              style={styles.scrollItem}
+              size="large"
+            ></ActivityIndicator>
+            <Switch style={styles.scrollItem} />
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
