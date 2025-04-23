@@ -1,27 +1,15 @@
-import {
-  Text,
-  View,
-  ScrollView,
-  ActivityIndicator,
-  Switch,
-} from "react-native";
-import styles from "./styles.js";
+import React from "react";
+import { View } from "react-native";
+import styles from "./styles";
+import Button from "./Button";
+import PressableButton from "./PressableButton";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.scroll}>
-        {new Array(20).fill(null).map((v, i) => (
-          <View key={i}>
-            <Text style={[styles.scrollItem, styles.text]}> Some Text</Text>
-            <ActivityIndicator
-              style={styles.scrollItem}
-              size="large"
-            ></ActivityIndicator>
-            <Switch style={styles.scrollItem} />
-          </View>
-        ))}
-      </ScrollView>
+      <Button onPress={() => {}} label="Opacity" />
+      <Button onPress={() => {}} label="Highlight" touchable="highlight" />
+      <PressableButton />
     </View>
   );
 }
