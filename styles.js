@@ -3,19 +3,36 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#ghostwhite",
+    backgroundColor: "ghostwhite",
   },
-  button: {
-    padding: 10,
-    margin: 5,
+
+  swipeContainer: {
+    flex: 1,
+    flexDirection: "row",
+    width: 200,
+    height: 30,
+    marginTop: 50,
+  },
+
+  swipeItem: {
+    width: 200,
+    height: 30,
     backgroundColor: "azure",
+    justifyContent: "center",
     borderWidth: 1,
     borderRadius: 4,
-    borderColor: "lightgray",
+    borderColor: "slategrey",
   },
-  buttonText: {
-    color: "slategray",
+
+  swipeItemText: {
+    textAlign: "center",
+    color: "slategrey",
+  },
+
+  swipeBlank: {
+    width: 200,
+    height: 30,
   },
 });
